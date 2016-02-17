@@ -111,6 +111,7 @@ int main(int argn, const char *argc[]){
 
 	saito::model<double> pca;
 	pca.PCA(argc[1]);
+	//pca.WPCA(argc[1],0.5);
 	/*Eigen::Matrix< double, Eigen::Dynamic, Eigen::Dynamic > X(2,3);
 	X << 1,0,1,0,1,1;
 	std::cout<<X << std::endl;

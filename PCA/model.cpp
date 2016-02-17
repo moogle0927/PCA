@@ -234,7 +234,7 @@ namespace saito{
 
 		//compute weights 
 		//w = bsxfun(@times, X, w);
-		X.cwiseProduct( w.replicate(1,X.cols()) );
+		X=X.cwiseProduct( w.replicate(1,X.cols()) );
 
 		//X_mean = mean(X, 2)
 		X_mean = X.rowwise().mean();
@@ -293,7 +293,9 @@ namespace saito{
 			_mkdir( outDir.c_str() );
 			{
 				for( int j = 0; j != num_of_dimY; ++j){
+					
 					std::ostringstream name;
+					std::ostringstream nameraw;
 					name << outDir << "/vect_" << std::setw(4) << std::setfill('0') << j << ".vect";
 					write_bin( &M(0, j), num_of_dimX, name.str().c_str() );
 				}
